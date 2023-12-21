@@ -1,0 +1,26 @@
+{
+  "printWidth": 100,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "jsxSingleQuote": false,
+  "trailingComma": "all",
+  "semi": true,
+  "useTabs": false,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "bracketSpacing": true,
+  "importOrder": [
+    "^react$",
+    "<THIRD_PARTY_MODULES>",
+    "^components/(.*)$",
+    "^pages/(.*)$",
+    "^contexts/(.*)$",
+    "^hooks/(.*)$",
+    "^types/(.*)$",
+    "^assets/(.*)$",
+    "^mocks/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

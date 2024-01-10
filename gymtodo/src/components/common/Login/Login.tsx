@@ -53,8 +53,13 @@ const SContainer = styled.div`
     box-sizing: border-box;
     border-radius: 4px;
     background-color: #302e3f;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 230%;
     padding: 40px 100px;
     margin-top: 13px;
+    margin-right: 300px;
     width: 100%;
   }
   .card-wrap {

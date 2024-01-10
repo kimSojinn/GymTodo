@@ -17,7 +17,7 @@ export const SignUp = () => {
                 className="form-style"
                 placeholder="Your Name"
                 id="logname"
-                autoComplete="off"
+                autoComplete="new-password"
               />
               <img src={Member} className="member-icon" alt="member" />
               <input
@@ -26,7 +26,7 @@ export const SignUp = () => {
                 className="form-style"
                 placeholder="Your Email"
                 id="logemail"
-                autoComplete="off"
+                autoComplete="new-password"
               />
               <img src={Email} className="email-icon" alt="email" />
               <input
@@ -35,7 +35,7 @@ export const SignUp = () => {
                 className="form-style"
                 placeholder="Your Password"
                 id="logpass"
-                autoComplete="off"
+                autoComplete="new-password"
               />
               <img src={Password} className="password-icon" alt="password" />
             </div>
@@ -52,19 +52,23 @@ export const SignUp = () => {
 const SContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 600px;
   justify-content: center;
   align-items: center;
+  width: 600px;
   color: #c4c3ca;
   font-weight: 700;
   margin: 0 auto;
-
   .layout {
     box-sizing: border-box;
     border-radius: 4px;
     background-color: #302e3f;
+    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 270%;
     padding: 40px 100px;
     margin-top: 13px;
+    margin-right: 300px;
     width: 100%;
   }
   .card-wrap {
@@ -120,6 +124,17 @@ const SContainer = styled.div`
   }
   .form-group {
     position: relative;
+  }
+  .form-group input::placeholder {
+    color: #c4c3ca;
+    opacity: 0.7;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+  }
+  .form-group input:focus::placeholder {
+    opacity: 0;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
   }
   .member-icon {
     position: absolute;

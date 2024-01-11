@@ -1,6 +1,6 @@
+import styled from 'styled-components';
 import React, { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
 interface CheckBarProps {
   onToggle: (isChecked: boolean) => void;

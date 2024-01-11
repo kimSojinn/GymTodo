@@ -1,6 +1,6 @@
+import styled from 'styled-components';
 import React, { FunctionComponent } from 'react';
 import { useEffect, useState } from 'react';
-import styled from 'styled-components';
 
 interface CheckBarProps {
   onToggle: (isChecked: boolean) => void;
@@ -9,19 +9,27 @@ interface CheckBarProps {
 export const CheckBar: FunctionComponent<CheckBarProps> = ({ onToggle }) => {
   const [isChecked, setIsChecked] = useState(false);
 
-  useEffect(() => {
-    onToggle(isChecked);
-  }, [isChecked]);
-
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setIsChecked(e.target.checked);
   };
 
+  const handleLoginClick = () => {
+    setIsChecked(false);
+  };
+
+  const handleSignupClick = () => {
+    setIsChecked(true);
+  };
+
+  useEffect(() => {
+    onToggle(isChecked);
+  }, [isChecked]);
+
   return (
     <SWrapper>
       <div className="select-wrapper">
-        <span>LOG IN</span>
-        <span>SIGN UP</span>
+        <span onClick={handleLoginClick}>LOG IN</span>
+        <span onClick={handleSignupClick}>SIGN UP</span>
       </div>
       <div>
         <input
@@ -49,6 +57,7 @@ const SWrapper = styled.div`
     gap: 30px;
     margin-bottom: 15px;
     font-size: 17px;
+    cursor: pointer;
   }
   .checkbox {
     display: flex;

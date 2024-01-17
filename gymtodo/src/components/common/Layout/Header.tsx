@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Header = () => {
   return (
     <SHeader>
-      <h1 className="title">GymTodo</h1>
+      <h1 className="title">🏋🏻GymTodo🏋🏻</h1>
     </SHeader>
   );
 };

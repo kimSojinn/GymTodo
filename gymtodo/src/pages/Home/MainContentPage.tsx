@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import { Home } from '../../components/Home/Home';
 import { Header } from '../../components/common/Layout/Header';
+import { MainContent } from '../../components/Home/MainContent';
 
-export const HomePage = () => {
+export const MainContentPage = () => {
   return (
-    <SHomepage>
+    <SMainContentpage>
       <Header />
-      <Home />
-    </SHomepage>
+      <MainContent />
+    </SMainContentpage>
   );
 };
 
-const SHomepage = styled.div`
+const SMainContentpage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

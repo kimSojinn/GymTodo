@@ -1,20 +1,20 @@
 import styled from 'styled-components';
+import { Navbar } from '../common/Layout/Navbar';
 
 export const MainContent = () => {
   return (
     <SMainContent>
-      <div></div>
+      <div className="navbar">
+        <Navbar />
+      </div>
     </SMainContent>
   );
 };
 
 const SMainContent = styled.div`
-  background-color: #c4c3ca;
-  width: 100%;
-  height: 60%;
-  max-width: 500px;
-  overflow: hidden;
-  border-radius: 1rem;
-  .layout {
+  display: flex;
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
   }
 `;

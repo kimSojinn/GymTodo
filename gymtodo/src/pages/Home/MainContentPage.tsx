@@ -5,7 +5,6 @@ import { MainContent } from '../../components/Home/MainContent';
 export const MainContentPage = () => {
   return (
     <SMainContentpage>
-      <Header />
       <MainContent />
     </SMainContentpage>
   );

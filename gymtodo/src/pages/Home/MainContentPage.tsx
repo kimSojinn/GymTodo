@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Header } from '../../components/common/Layout/Header';
 import { MainContent } from '../../components/Home/MainContent';
 
 export const MainContentPage = () => {
@@ -10,10 +9,4 @@ export const MainContentPage = () => {
   );
 };
 
-const SMainContentpage = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-`;
+const SMainContentpage = styled.div``;

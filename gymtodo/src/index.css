@@ -4,5 +4,21 @@ body {
   line-height: 1;
   box-sizing: border-box;
   background-color: #1f2029;
-  color: #c4c3ca;
+  font-family: 'GmarketSans';
+}
+
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 700;
+  src: url(./assets/font/GmarketSansBold.otf);
+}
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 500;
+  src: url(./assets/font/GmarketSansMedium.otf);
+}
+@font-face {
+  font-family: 'GmarketSans';
+  font-weight: 300;
+  src: url(./assets/font/GmarketSansLight.otf);
 }

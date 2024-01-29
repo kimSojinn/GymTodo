@@ -11,11 +11,11 @@ export const Login = () => {
           <form autoComplete="off">
             <div className="form-group">
               <input
-                type="email"
-                name="logemail"
+                type="text"
+                name="logid"
                 className="form-style"
-                placeholder="Your Email"
-                id="logemail"
+                placeholder="Your Id"
+                id="logid"
                 autoComplete="off"
               />
               <img src={Email} className="email-icon" alt="email" />

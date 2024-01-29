@@ -21,11 +21,11 @@ export const SignUp = () => {
               />
               <img src={Member} className="member-icon" alt="member" />
               <input
-                type="email"
-                name="logemail"
+                type="text"
+                name="logid"
                 className="form-style"
-                placeholder="Your Email"
-                id="logemail"
+                placeholder="Your Id"
+                id="logeid"
                 autoComplete="new-password"
               />
               <img src={Email} className="email-icon" alt="email" />

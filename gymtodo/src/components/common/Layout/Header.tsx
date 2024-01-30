@@ -9,10 +9,5 @@ export const Header = () => {
 };
 
 const SHeader = styled.div`
-  .title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
-  }
+  color: #c4c3ca;
 `;

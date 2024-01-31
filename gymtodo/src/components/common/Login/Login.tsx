@@ -16,7 +16,7 @@ export const Login = () => {
                 className="form-style"
                 placeholder="Your Id"
                 id="logid"
-                autoComplete="off"
+                autoComplete="new-password"
               />
               <img src={Email} className="email-icon" alt="email" />
               <input
@@ -25,7 +25,7 @@ export const Login = () => {
                 className="form-style"
                 placeholder="Your Password"
                 id="logpass"
-                autoComplete="off"
+                autoComplete="new-password"
               />
               <img src={Password} className="password-icon" alt="password" />
             </div>

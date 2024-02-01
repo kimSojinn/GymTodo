@@ -5,8 +5,8 @@ export const Main = () => {
 };
 
 const SMain = styled.div`
-  background-color: #2a2b38;
-  color: #c4c3ca;
+  background-color: #c4c3ca;
+  color: #2a2b38;
   height: calc(100vh - 60px);
   width: 39.063vw;
   margin: 30px;

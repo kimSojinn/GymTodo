@@ -1,8 +1,26 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import Email from '../../../assets/svg/Email.svg';
 import Password from '../../../assets/svg/Password.svg';
 
+const FAKE_USER = {
+  id: 'testuser',
+  password: 'password',
+  token: 'fake_token',
+};
+
 export const Login = () => {
+  const [userId, setUserId] = useState('');
+  const [userPw, setUserPw] = useState('');
+
+  const handleLogin = () => {
+    if (userId === FAKE_USER.id && userPw === FAKE_USER.password) {
+      alert('로그인 성공! 토큰: ' + FAKE_USER.token);
+    } else {
+      alert('아이디 또는 비밀번호가 일치하지 않습니다.');
+    }
+  };
+
   return (
     <SContainer>
       <div className="layout">
@@ -16,7 +34,8 @@ export const Login = () => {
                 className="form-style"
                 placeholder="Your Id"
                 id="logid"
-                autoComplete="off"
+                autoComplete="new-password"
+                onChange={(e) => setUserId(e.target.value)}
               />
               <img src={Email} className="email-icon" alt="email" />
               <input
@@ -25,12 +44,13 @@ export const Login = () => {
                 className="form-style"
                 placeholder="Your Password"
                 id="logpass"
-                autoComplete="off"
+                autoComplete="new-password"
+                onChange={(e) => setUserPw(e.target.value)}
               />
               <img src={Password} className="password-icon" alt="password" />
             </div>
           </form>
-          <a href="#" className="btn">
+          <a href="#" className="btn" onClick={handleLogin}>
             submit
           </a>
         </div>

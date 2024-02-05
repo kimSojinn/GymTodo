@@ -15,7 +15,7 @@ export const Login = () => {
 
   const handleLogin = () => {
     if (userId === FAKE_USER.id && userPw === FAKE_USER.password) {
-      alert('로그인 성공! 토큰: ' + FAKE_USER.token);
+      alert('로그인 성공!');
     } else {
       alert('아이디 또는 비밀번호가 일치하지 않습니다.');
     }

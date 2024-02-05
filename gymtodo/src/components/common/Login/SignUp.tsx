@@ -25,7 +25,7 @@ export const SignUp = () => {
                 name="logid"
                 className="form-style"
                 placeholder="Your Id"
-                id="logeid"
+                id="logid"
                 autoComplete="new-password"
               />
               <img src={Email} className="email-icon" alt="email" />

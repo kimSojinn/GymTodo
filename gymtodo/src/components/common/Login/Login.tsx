@@ -13,7 +13,8 @@ export const Login = () => {
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     if (userId === FAKE_USER.id && userPw === FAKE_USER.password) {
       alert('로그인 성공!');
     } else {
@@ -26,7 +27,7 @@ export const Login = () => {
       <div className="layout">
         <div className="card-wrap">
           <span className="title">Log In</span>
-          <form autoComplete="off">
+          <form autoComplete="off" onSubmit={handleLogin}>
             <div className="form-group">
               <input
                 type="text"
@@ -49,10 +50,12 @@ export const Login = () => {
               />
               <img src={Password} className="password-icon" alt="password" />
             </div>
+            <div className="wrap">
+              <button type="submit" className="btn">
+                submit
+              </button>
+            </div>
           </form>
-          <a href="#" className="btn" onClick={handleLogin}>
-            submit
-          </a>
         </div>
       </div>
     </SContainer>
@@ -68,7 +71,6 @@ const SContainer = styled.div`
   color: #c4c3ca;
   font-weight: 700;
   margin: 0 auto;
-
   .layout {
     box-sizing: border-box;
     border-radius: 4px;
@@ -92,6 +94,11 @@ const SContainer = styled.div`
   .title {
     font-size: 25px;
     margin-bottom: 20px;
+  }
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .btn {
     border-radius: 4px;
@@ -121,6 +128,8 @@ const SContainer = styled.div`
     box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
     margin-top: 20px;
     text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
   }
   .btn:active,
   .btn:focus {

@@ -2,15 +2,33 @@ import styled from 'styled-components';
 import Email from '../../../assets/svg/Email.svg';
 import Password from '../../../assets/svg/Password.svg';
 import Member from '../../../assets/svg/Member.svg';
+import { useState } from 'react';
 
 export const SignUp = () => {
+  const [userId, setUserId] = useState('');
+  const [userPw, setUserPw] = useState('');
+  const [isUserIdValid, setIsUserIdValid] = useState(true);
+  const [isUserPwValid, setIsUserPwValid] = useState(true);
+
+  const handleIdChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setUserId(value);
+    setIsUserIdValid(value.length > 6 && value.length <= 20);
+  };
+
+  const handlePwChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setUserPw(value);
+    setIsUserPwValid(value.length > 6 && value.length <= 20);
+  };
+
   return (
     <SContainer>
       <div className="layout">
         <div className="card-wrap">
           <span className="title">Sign Up</span>
           <form autoComplete="off">
-            <div className="form-group">
+            <div className="input-group">
               <input
                 type="text"
                 name="logtext"
@@ -20,6 +38,8 @@ export const SignUp = () => {
                 autoComplete="new-password"
               />
               <img src={Member} className="member-icon" alt="member" />
+            </div>
+            <div className="input-group">
               <input
                 type="text"
                 name="logid"
@@ -27,8 +47,16 @@ export const SignUp = () => {
                 placeholder="Your Id"
                 id="logid"
                 autoComplete="new-password"
+                onChange={handleIdChange}
               />
+              {!isUserIdValid && (
+                <div className={`warn ${isUserIdValid ? 'hide' : ''}`}>
+                  아이디는 6~20자 사이여야 합니다.
+                </div>
+              )}
               <img src={Email} className="email-icon" alt="email" />
+            </div>
+            <div className="input-group">
               <input
                 type="password"
                 name="logpass"
@@ -36,7 +64,13 @@ export const SignUp = () => {
                 placeholder="Your Password"
                 id="logpass"
                 autoComplete="new-password"
+                onChange={handlePwChange}
               />
+              {!isUserPwValid && (
+                <div className={`warn ${isUserPwValid ? 'hide' : ''}`}>
+                  비밀번호는 6~20자 사이여야 합니다.
+                </div>
+              )}
               <img src={Password} className="password-icon" alt="password" />
             </div>
           </form>
@@ -55,8 +89,8 @@ const SContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 600px;
+  height: 100%;
   color: #c4c3ca;
-  font-weight: 700;
   margin: 0 auto;
   .layout {
     box-sizing: border-box;
@@ -79,8 +113,18 @@ const SContainer = styled.div`
     gap: 10px;
   }
   .title {
+    font-weight: 700;
     font-size: 25px;
     margin-bottom: 20px;
+  }
+  .input-group {
+    position: relative;
+  }
+  .warn {
+    margin-top: 10px;
+  }
+  .hide {
+    display: none;
   }
   .btn {
     border-radius: 4px;
@@ -122,9 +166,9 @@ const SContainer = styled.div`
     color: #ffeba7;
     box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
   }
-  .form-group {
+  /* .form-group {
     position: relative;
-  }
+  } */
   .form-group input::placeholder {
     color: #c4c3ca;
     opacity: 0.7;
@@ -138,19 +182,19 @@ const SContainer = styled.div`
   }
   .member-icon {
     position: absolute;
-    top: 20%;
+    top: 60%;
     left: 20px;
     transform: translateY(-50%);
   }
   .email-icon {
     position: absolute;
-    top: 54%;
+    top: 48%;
     left: 20px;
     transform: translateY(-50%);
   }
   .password-icon {
     position: absolute;
-    top: 88%;
+    top: 45%;
     left: 20px;
     transform: translateY(-50%);
   }

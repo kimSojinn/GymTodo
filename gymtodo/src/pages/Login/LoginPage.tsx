@@ -5,17 +5,17 @@ import { Login } from '../../components/common/Login/Login';
 import { SignUp } from '../../components/common/Login/SignUp';
 
 export const LoginPage = () => {
-  const [isLogin, setIsLogin] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   const handleToggle = () => {
-    setIsLogin(!isLogin);
+    setShowLogin(!showLogin);
   };
 
   return (
     <SLoginPage>
       <CheckBar onToggle={handleToggle} />
       <div className="card-3d-wrap">
-        <div className={`card-3d-wrapper ${!isLogin ? 'flipped' : ''}`}>
+        <div className={`card-3d-wrapper ${!showLogin ? 'flipped' : ''}`}>
           <div className="card-front">
             <Login />
           </div>

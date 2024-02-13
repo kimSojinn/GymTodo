@@ -112,7 +112,7 @@ const SContainer = styled.div`
     margin-top: 20px;
     text-decoration: none;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: bold;
   }
   .btn:active,
   .btn:focus {

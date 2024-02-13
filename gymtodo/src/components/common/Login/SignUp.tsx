@@ -40,38 +40,42 @@ export const SignUp = () => {
               <img src={Member} className="member-icon" alt="member" />
             </div>
             <div className="input-group">
-              <input
-                type="text"
-                name="logid"
-                className="form-style"
-                placeholder="Your Id"
-                id="logid"
-                autoComplete="new-password"
-                onChange={handleIdChange}
-              />
+              <div className="input-wrap">
+                <input
+                  type="text"
+                  name="logid"
+                  className="form-style"
+                  placeholder="Your Id"
+                  id="logid"
+                  autoComplete="new-password"
+                  onChange={handleIdChange}
+                />
+                <img src={Email} className="email-icon" alt="email" />
+              </div>
               {!isUserIdValid && (
                 <div className={`warn ${isUserIdValid ? 'hide' : ''}`}>
                   아이디는 6~20자 사이여야 합니다.
                 </div>
               )}
-              <img src={Email} className="email-icon" alt="email" />
             </div>
             <div className="input-group">
-              <input
-                type="password"
-                name="logpass"
-                className="form-style"
-                placeholder="Your Password"
-                id="logpass"
-                autoComplete="new-password"
-                onChange={handlePwChange}
-              />
+              <div className="input-wrap">
+                <input
+                  type="password"
+                  name="logpass"
+                  className="form-style"
+                  placeholder="Your Password"
+                  id="logpass"
+                  autoComplete="new-password"
+                  onChange={handlePwChange}
+                />
+                <img src={Password} className="password-icon" alt="password" />
+              </div>
               {!isUserPwValid && (
                 <div className={`warn ${isUserPwValid ? 'hide' : ''}`}>
                   비밀번호는 6~20자 사이여야 합니다.
                 </div>
               )}
-              <img src={Password} className="password-icon" alt="password" />
             </div>
           </form>
           <a href="#" className="btn">
@@ -120,8 +124,12 @@ const SContainer = styled.div`
   .input-group {
     position: relative;
   }
+  .input-wrap {
+    position: relative;
+  }
+
   .warn {
-    margin-top: 10px;
+    margin-top: 15px;
   }
   .hide {
     display: none;
@@ -154,6 +162,7 @@ const SContainer = styled.div`
     box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
     margin-top: 20px;
     text-decoration: none;
+    font-weight: bold;
   }
   .btn:active,
   .btn:focus {
@@ -188,13 +197,13 @@ const SContainer = styled.div`
   }
   .email-icon {
     position: absolute;
-    top: 48%;
+    top: 60%;
     left: 20px;
     transform: translateY(-50%);
   }
   .password-icon {
     position: absolute;
-    top: 45%;
+    top: 60%;
     left: 20px;
     transform: translateY(-50%);
   }

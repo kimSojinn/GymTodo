@@ -39,7 +39,7 @@ export const Navbar = () => {
 const SNavbar = styled.div`
   background-color: #2a2b38;
   color: #c4c3ca;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 100px);
   width: 15.625vw;
   margin: 30px;
   padding: 20px;

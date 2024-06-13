@@ -5,7 +5,6 @@ import { Lists } from '../../components/Lists/Lists';
 export const ListsPage = () => {
   return (
     <SListspage>
-      <Navbar />
       <Lists />
     </SListspage>
   );

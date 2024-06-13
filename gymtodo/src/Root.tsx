@@ -1,23 +1,16 @@
 import { Outlet } from 'react-router-dom';
-import { useCookies } from 'react-cookie';
-import { Main } from './components/Main/Main';
 import { LoginPage } from './pages/Login/LoginPage';
+import { getCookie } from './hooks/cookie';
+import { Header } from './components/common/Layout/Header';
 
 export const Root = () => {
-  const [cookies] = useCookies(['loginToken']); // 'loginToken'은 쿠키의 이름입니다.
+  const cookie = getCookie('loginToken');
 
   return (
     <div>
-      {cookies.loginToken ? (
-        <div>
-          <Main />
-          <Outlet />
-        </div>
-      ) : (
-        <div>
-          <LoginPage />
-        </div>
-      )}
+      {!cookie && <LoginPage />}
+      {cookie && <Header />}
+      <Outlet />
     </div>
   );
 };

@@ -7,7 +7,7 @@ export const Main = () => {
 const SMain = styled.div`
   background-color: #c4c3ca;
   color: #2a2b38;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 100px);
   width: 39.063vw;
   margin: 30px;
   padding: 30px;
